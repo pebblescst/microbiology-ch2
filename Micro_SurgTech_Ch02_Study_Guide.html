@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microbiology for Surgical Technologists – Chapter 2 Study Guide</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #F5EEF8; color: #1a1a2e; min-height: 100vh; }
+
+  header {
+    background: linear-gradient(135deg, #2C1654 0%, #4A235A 60%, #1A6B5A 100%);
+    color: white; padding: 22px 30px; text-align: center;
+  }
+  header h1 { font-size: 1.55rem; font-weight: bold; letter-spacing: 0.5px; }
+  header p { font-size: 0.88rem; margin-top: 5px; opacity: 0.85; }
+  header .badge {
+    display: inline-block; background: #1ABC9C; color: white;
+    border-radius: 20px; padding: 3px 14px; font-size: 0.78rem;
+    margin-top: 8px; letter-spacing: 0.4px;
+  }
+
+  .tab-bar {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    background: #1e0e38; padding: 8px 14px 0; gap: 4px;
+  }
+  .tab-bar button {
+    background: transparent; border: none; color: #C39BD3;
+    padding: 9px 14px; cursor: pointer; font-size: 0.82rem;
+    border-radius: 6px 6px 0 0; font-family: Arial, sans-serif;
+    border-bottom: 3px solid transparent; transition: all 0.2s;
+  }
+  .tab-bar button:hover { background: #2e1654; color: #fff; }
+  .tab-bar button.active {
+    background: #F5EEF8; color: #2C1654; font-weight: bold;
+    border-bottom: 3px solid #1ABC9C;
+  }
+
+  .tab-content { display: none; padding: 24px 28px; max-width: 960px; margin: 0 auto; }
+  .tab-content.active { display: block; }
+
+  h2 { color: #2C1654; font-size: 1.25rem; margin-bottom: 14px; border-left: 4px solid #1ABC9C; padding-left: 10px; }
+  h3 { color: #4A235A; font-size: 1.02rem; margin: 18px 0 8px; }
+
+  .card {
+    background: white; border-radius: 8px; padding: 18px 20px;
+    margin-bottom: 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border-left: 4px solid #7D3C98;
+  }
+  .card.teal   { border-left-color: #1ABC9C; }
+  .card.gold   { border-left-color: #D4AC0D; }
+  .card.red    { border-left-color: #C0392B; }
+  .card.blue   { border-left-color: #2471A3; }
+  .card.green  { border-left-color: #1E8449; }
+
+  .card-title { font-weight: bold; color: #2C1654; font-size: 0.97rem; margin-bottom: 6px; }
+  .card-sub   { font-size: 0.82rem; color: #7D3C98; font-style: italic; margin-bottom: 6px; }
+  .card p, .card li { font-size: 0.88rem; line-height: 1.6; color: #2c3e50; }
+  .card ul { margin-left: 16px; margin-top: 4px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  @media(max-width:680px){ .two-col,.three-col { grid-template-columns: 1fr; } }
+
+  .highlight-box {
+    background: #EBD5F5; border-radius: 8px; padding: 14px 18px;
+    margin: 14px 0; font-size: 0.88rem; line-height: 1.6; color: #2C1654;
+    border: 1px solid #C39BD3;
+  }
+  .highlight-box strong { color: #2C1654; }
+
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content:''; position:absolute; left:10px; top:0; bottom:0; width:3px; background:#C39BD3; border-radius:2px; }
+  .tl-item { position:relative; margin-bottom:16px; }
+  .tl-dot  { position:absolute; left:-24px; top:5px; width:14px; height:14px; border-radius:50%; background:#1ABC9C; border:2px solid white; box-shadow:0 0 0 2px #1ABC9C; }
+  .tl-year { font-size:0.78rem; font-weight:bold; color:#7D3C98; }
+  .tl-text { font-size:0.86rem; color:#2c3e50; line-height:1.5; }
+
+  /* Hierarchy display */
+  .hier-row { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+  .hier-pill {
+    padding:4px 14px; border-radius:20px; font-size:0.82rem; font-weight:bold;
+    white-space:nowrap; min-width:90px; text-align:center;
+  }
+  .hier-desc { font-size:0.82rem; color:#555; }
+
+  /* Key Terms */
+  .term-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:12px; }
+  .term-card {
+    background:white; border-radius:7px; padding:14px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.07);
+    cursor:pointer; border-top:3px solid #7D3C98; transition:box-shadow 0.2s;
+  }
+  .term-card:hover { box-shadow:0 4px 12px rgba(0,0,0,0.14); }
+  .term-front { font-weight:bold; color:#2C1654; font-size:0.92rem; }
+  .term-back  { display:none; font-size:0.83rem; color:#444; margin-top:8px; line-height:1.5; border-top:1px solid #eee; padding-top:8px; }
+  .term-hint  { font-size:0.72rem; color:#888; margin-top:4px; }
+  .term-card.open .term-back { display:block; }
+
+  /* Quiz */
+  .quiz-q { background:white; border-radius:8px; padding:18px 20px; margin-bottom:18px; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
+  .quiz-q p { font-weight:bold; color:#2C1654; margin-bottom:12px; font-size:0.93rem; }
+  .quiz-opt { display:block; width:100%; text-align:left; background:#F5EEF8; border:1px solid #C39BD3; border-radius:5px; padding:9px 14px; margin:5px 0; cursor:pointer; font-size:0.87rem; font-family:Arial,sans-serif; transition:background 0.15s; }
+  .quiz-opt:hover { background:#EBD5F5; }
+  .quiz-opt.correct { background:#D5F5E3; border-color:#27AE60; color:#1a5e2a; font-weight:bold; }
+  .quiz-opt.wrong   { background:#FDECEA; border-color:#E74C3C; color:#7B241C; }
+  .quiz-feedback    { font-size:0.82rem; margin-top:8px; padding:6px 10px; border-radius:4px; display:none; }
+  .quiz-feedback.show { display:block; }
+  .quiz-feedback.ok   { background:#D5F5E3; color:#1a5e2a; }
+  .quiz-feedback.no   { background:#FDECEA; color:#7B241C; }
+  #quiz-score { text-align:center; padding:16px; font-size:1rem; font-weight:bold; color:#2C1654; display:none; }
+  #submit-quiz { display:block; margin:18px auto 0; background:#1ABC9C; color:white; border:none; border-radius:6px; padding:10px 34px; font-size:0.95rem; cursor:pointer; font-family:Arial,sans-serif; }
+  #submit-quiz:hover { background:#17A589; }
+
+  .section-intro { font-size:0.89rem; color:#2c3e50; line-height:1.6; margin-bottom:16px; }
+  .badge-pill {
+    display:inline-block; background:#7D3C98; color:white;
+    border-radius:12px; padding:2px 10px; font-size:0.75rem; margin-right:4px;
+  }
+  .badge-pill.teal  { background:#1ABC9C; }
+  .badge-pill.gold  { background:#D4AC0D; }
+  .badge-pill.red   { background:#C0392B; }
+  .badge-pill.blue  { background:#2471A3; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Microbiology for Surgical Technologists — 3rd Edition</h1>
+  <p>Rodriguez &bull; Chapter 2: The Science of Microbiology</p>
+  <span class="badge">&#9877; CST Board Prep &nbsp;&bull;&nbsp; ATA College</span>
+</header>
+
+<div class="tab-bar">
+  <button class="active" onclick="showTab('overview',this)">Chapter Overview</button>
+  <button onclick="showTab('classification',this)">Classification History</button>
+  <button onclick="showTab('domains',this)">Domains &amp; Empires</button>
+  <button onclick="showTab('cellular',this)">Cellular Empire</button>
+  <button onclick="showTab('viral',this)">Virus Empire</button>
+  <button onclick="showTab('nomenclature',this)">Taxonomy &amp; Nomenclature</button>
+  <button onclick="showTab('terms',this)">Key Terms</button>
+  <button onclick="showTab('quiz',this)">Quiz</button>
+</div>
+
+<!-- ═══════════ TAB 1: OVERVIEW ═══════════ -->
+<div id="overview" class="tab-content active">
+  <h2>Chapter Overview &amp; Clinical Significance</h2>
+  <p class="section-intro">Chapter 2 establishes the scientific framework underpinning microbiology — defining what microbes are, how they are classified, and why precise naming and documentation matter in both science and the surgical environment.</p>
+
+  <div class="card teal">
+    <div class="card-title">&#128203; Clinical Significance — Documentation &amp; Standards of Care</div>
+    <p style="margin-bottom:8px;">"In the eyes of the law, if it isn't documented, it didn't happen."</p>
+    <ul>
+      <li>Scientific research and healthcare require documentation of every procedure, outcome result, and all persons involved</li>
+      <li>Science relies on: critical procedural steps, accurate documentation, clear communication, professional collaboration, technical skill, and personal integrity</li>
+      <li>Standards of care are foundational principles based on these criteria</li>
+      <li>Patients rely on best practices in research AND in their surgical care</li>
+    </ul>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">What Is Microbiology?</div>
+      <p>The study of microorganisms — a diverse group of minute, simple life forms including <strong>bacteria, archaea, algae, fungi, protozoa, and viruses</strong>. The field is concerned with the structure, function, and classification of such organisms and with ways of both exploiting and controlling their activities.</p>
+      <p style="margin-top:8px;">Prevention of surgical site infections (SSIs) is of <strong>paramount importance</strong> in the OR environment.</p>
+    </div>
+    <div class="card gold">
+      <div class="card-title">What Are Microbes?</div>
+      <ul>
+        <li>Also called microorganisms</li>
+        <li>Include <strong>microscopic living organisms</strong> AND bits of material that are not alive (viruses, prions)</li>
+        <li>First observed by van Leeuwenhoek's microscope</li>
+        <li>Modern electron microscopes allow study of the smallest pathogens including viruses</li>
+        <li>Comprise the largest group of Earth's inhabitants — going back ~3 billion years</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Normal Flora &amp; Microbiome</div>
+    <ul>
+      <li>No living being can survive without some exposure to microorganisms — this is its <strong>normal flora</strong> or <strong>microbiome</strong></li>
+      <li>When normal flora organisms escape their typical environments, they can cause serious pathological conditions</li>
+      <li><strong>Transient microbes (microflora)</strong> — temporary microbes acquired by touching surfaces or environmental exposure</li>
+      <li><strong>Resident / indigenous microbes</strong> — normal microflora living deep in skin layers</li>
+      <li>OR implication: invasive procedures require antimicrobial skin cleansing prior to incision due to both resident and transient flora</li>
+    </ul>
+  </div>
+
+  <h3>Chapter Objectives</h3>
+  <div class="card blue">
+    <ul>
+      <li>Define key terms and distinguish between normal flora and pathogenic microbes</li>
+      <li>Compare the various classification systems of living organisms</li>
+      <li>Discuss characteristics of the prokaryotes</li>
+      <li>Describe how viruses and prions become pathogenic</li>
+      <li>Discuss the systems of nomenclature and taxonomy used to classify microbes</li>
+      <li>Apply critical thinking skills relating chapter material to the surgical environment of care or broader global community</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════ TAB 2: CLASSIFICATION HISTORY ═══════════ -->
+<div id="classification" class="tab-content">
+  <h2>History of Microbial Classification</h2>
+  <p class="section-intro">Scientific classification has evolved over 2,400 years — from two kingdoms to modern multi-domain systems. Each revision reflected new discoveries about the true nature of life.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot" style="background:#2471A3;box-shadow:0 0 0 2px #2471A3;"></div>
+      <div class="tl-year">~350 BCE — Aristotle</div>
+      <div class="tl-text"><strong>Two Kingdoms:</strong> Plantae (plants) and Animalia (animals). Used for centuries. Based on visible characteristics only.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:#2471A3;box-shadow:0 0 0 2px #2471A3;"></div>
+      <div class="tl-year">1894 — Ernst Haeckel</div>
+      <div class="tl-text"><strong>Three Kingdoms:</strong> Added <em>Protista</em> (included both single-celled eukaryotes and bacterial prokaryotes). First recognition that some organisms fit neither plant nor animal category.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:#7D3C98;box-shadow:0 0 0 2px #7D3C98;"></div>
+      <div class="tl-year">1956 — Herbert Copeland</div>
+      <div class="tl-text"><strong>Four Kingdoms:</strong> Split Protista into two — creating Kingdom of Bacteria, more clearly separating single-cell eukaryotes from bacteria.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:#7D3C98;box-shadow:0 0 0 2px #7D3C98;"></div>
+      <div class="tl-year">1959 / 1969 — Robert Whittaker</div>
+      <div class="tl-text"><strong>Five Kingdoms:</strong> Plantae, Animalia, Protista (single-cell eukaryotes), Monera (single-cell prokaryotes), Fungi. Based on <strong>phenetics</strong> — scientific observation of similarities between organisms.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:#1ABC9C;box-shadow:0 0 0 2px #1ABC9C;"></div>
+      <div class="tl-year">1977 — Carl Woese &amp; Colleagues</div>
+      <div class="tl-text">Discovered <strong>Archaea</strong> — a distinct category, separate from both eukaryotes and prokaryotes, sharing a single genetic ancestor. Often found in extreme environments (glaciers, hot springs). More closely resemble eukaryotes.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:#1ABC9C;box-shadow:0 0 0 2px #1ABC9C;"></div>
+      <div class="tl-year">1990 — Carl Woese</div>
+      <div class="tl-text"><strong>Three Domains System:</strong> Bacteria, Archaea, Eukarya. Based on <strong>cladistics and phylogeny</strong> (genetic family trees) rather than phenetics.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:#C0392B;box-shadow:0 0 0 2px #C0392B;"></div>
+      <div class="tl-year">2010 — Comparative Genomics Researchers</div>
+      <div class="tl-text"><strong>Two Empires (proposed):</strong> Living Cellular Empire (Bacteria, Archaea, Eukarya) + Non-Living Viral Empire (viruses, plasmids, prions, transposons, viroids). Proposed because the Three Domains system did not account for non-living microbes.</div>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="margin-top:20px;">
+    <strong>Key Distinction:</strong> Earlier systems relied on <strong>phenetics</strong> (what organisms look like). Modern systems rely on <strong>cladistics and phylogeny</strong> (genetic relationships and evolutionary history) — a fundamentally different and more accurate approach.
+  </div>
+
+  <h3>Whittaker's Five Kingdoms (1969)</h3>
+  <div class="three-col" style="margin-top:8px;">
+    <div class="card" style="margin-bottom:0;">
+      <div class="card-title">Plantae</div>
+      <p>Plants — multi-celled photosynthetic organisms</p>
+    </div>
+    <div class="card" style="margin-bottom:0;">
+      <div class="card-title">Animalia</div>
+      <p>Animals — multi-celled heterotrophic organisms</p>
+    </div>
+    <div class="card teal" style="margin-bottom:0;">
+      <div class="card-title">Protista</div>
+      <p>Single-celled eukaryotes: protozoa, algae</p>
+    </div>
+    <div class="card" style="margin-bottom:0; margin-top:12px;">
+      <div class="card-title">Monera</div>
+      <p>Single-celled prokaryotes: bacteria</p>
+    </div>
+    <div class="card gold" style="margin-bottom:0; margin-top:12px;">
+      <div class="card-title">Fungi</div>
+      <p>Single- or multi-celled osmotrophic eukaryotes</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ TAB 3: DOMAINS & EMPIRES ═══════════ -->
+<div id="domains" class="tab-content">
+  <h2>Three Domains &amp; Two Empires Systems</h2>
+  <p class="section-intro">The modern classification frameworks used in microbiology today — one based on genetic evolutionary relationships, the other proposed to account for non-living viral agents.</p>
+
+  <h3>Three Domains System (Woese, 1990)</h3>
+  <div class="card teal">
+    <p style="margin-bottom:10px;">Based on <strong>cladistics</strong> (charting genetic lineages) and <strong>phylogeny</strong> (evolutionary relationships) — creating a microbial family tree from genetic data rather than appearance.</p>
+    <div class="three-col" style="margin-top:10px;">
+      <div style="background:#EBD5F5;border-radius:7px;padding:12px;">
+        <div style="font-weight:bold;color:#4A235A;margin-bottom:6px;">Domain: Bacteria</div>
+        <ul style="font-size:0.85rem;color:#2c3e50;margin-left:14px;">
+          <li>Prokaryotic cells</li>
+          <li>Genetic material in protoplasm (no nucleus)</li>
+          <li>Most numerous organisms on Earth</li>
+          <li>Includes all bacteria</li>
+        </ul>
+      </div>
+      <div style="background:#D5F5E3;border-radius:7px;padding:12px;">
+        <div style="font-weight:bold;color:#1A5E2A;margin-bottom:6px;">Domain: Archaea</div>
+        <ul style="font-size:0.85rem;color:#2c3e50;margin-left:14px;">
+          <li>Single-celled, similar structure to bacteria</li>
+          <li>Distinctly different genetic structure</li>
+          <li>Affinity for extreme environments</li>
+          <li>Salt marshes, steam vents, ice glaciers</li>
+          <li>Likely ancient microbial precursor to both groups</li>
+        </ul>
+      </div>
+      <div style="background:#D5EEF8;border-radius:7px;padding:12px;">
+        <div style="font-weight:bold;color:#154360;margin-bottom:6px;">Domain: Eukarya</div>
+        <ul style="font-size:0.85rem;color:#2c3e50;margin-left:14px;">
+          <li>Cells have membrane-bound organelles</li>
+          <li>Nucleus containing DNA</li>
+          <li>Includes humans, animals, plants, fungi, protozoa, algae</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h3>Two Empires System (Proposed 2010)</h3>
+  <div class="two-col">
+    <div class="card green">
+      <div class="card-title">Empire 1: Cellular Organisms (Living)</div>
+      <p style="font-size:0.85rem;margin-bottom:8px;">Includes all members of the Three Domains system:</p>
+      <ul>
+        <li>Bacteria (prokaryotes)</li>
+        <li>Archaea (ancient extremophiles)</li>
+        <li>Eukarya (eukaryotes — plants, animals, fungi, protozoa, algae)</li>
+      </ul>
+    </div>
+    <div class="card red">
+      <div class="card-title">Empire 2: Viral Agents (Non-Living)</div>
+      <p style="font-size:0.85rem;margin-bottom:8px;">A separate empire accounting for non-living agents — not represented in the Three Domains system:</p>
+      <ul>
+        <li>Viruses</li>
+        <li>Plasmids</li>
+        <li>Prions</li>
+        <li>Transposons</li>
+        <li>Viroids</li>
+        <li>Other genetic material particles</li>
+      </ul>
+      <p style="margin-top:8px;font-size:0.83rem;color:#7B241C;">The empire of viruses <em>far exceeds</em> the numbers of microbes in the cellular empire.</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Why Two Empires?</strong> The Three Domains system was challenged by comparative genomics researchers in 2010 because it did not represent non-living viral agents. Genetic nucleotide sequencing showed these agents formed their own distinct group — leading to the proposed Two Empires framework separating <em>cellular life</em> from <em>non-living viral agents</em>.
+  </div>
+
+  <h3>Phenetics vs. Cladistics — Key Distinction</h3>
+  <div class="two-col">
+    <div class="card gold">
+      <div class="card-title">Phenetics (Older Method)</div>
+      <p>Classification based on <strong>observable similarities</strong> between organisms — what they look like, how they behave, structural features. Used through the Five Kingdoms era.</p>
+    </div>
+    <div class="card teal">
+      <div class="card-title">Cladistics &amp; Phylogeny (Modern Method)</div>
+      <p>Classification based on <strong>genetic relationships and evolutionary history</strong>. Uses DNA/RNA sequencing to map microbial family trees and trace common ancestors. Used in the Three Domains system onward.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ TAB 4: CELLULAR EMPIRE ═══════════ -->
+<div id="cellular" class="tab-content">
+  <h2>The Cellular Empire — Eukaryotes, Prokaryotes &amp; Archaea</h2>
+  <p class="section-intro">All living microorganisms in the cellular empire fall into three major categories, each with distinct cellular structure and characteristics.</p>
+
+  <div class="card teal">
+    <div class="card-title">&#129504; Eukaryotes</div>
+    <div class="card-sub">Cells have membrane-bound organelles and a nucleus containing DNA</div>
+    <div class="two-col" style="margin-top:10px;">
+      <div>
+        <p style="font-weight:bold;font-size:0.88rem;color:#2C1654;margin-bottom:6px;">Multi-celled Eukaryotes:</p>
+        <ul>
+          <li>Humans</li>
+          <li>Animals</li>
+          <li>Birds</li>
+          <li>Insects</li>
+          <li>Plants</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-weight:bold;font-size:0.88rem;color:#2C1654;margin-bottom:6px;">Single-celled Eukaryotes:</p>
+        <ul>
+          <li>Protozoa</li>
+          <li>Algae</li>
+          <li>Fungi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">&#129440; Prokaryotes</div>
+    <div class="card-sub">Cells contain genetic material in protoplasm — no membrane-bound nucleus</div>
+    <ul>
+      <li>Includes <strong>all bacteria</strong></li>
+      <li>Genetic material (DNA/RNA) floats freely in the cytoplasm (protoplasm)</li>
+      <li>Generally simpler in structure than eukaryotes</li>
+      <li><strong>Cyanobacteria</strong> — once thought to be algae; are actually aquatic bacteria that perform photosynthesis. Also known as blue-green algae.</li>
+      <li>Most numerous organisms on Earth</li>
+    </ul>
+  </div>
+
+  <div class="card gold">
+    <div class="card-title">&#127756; Archaea (Archaebacteria)</div>
+    <div class="card-sub">Single-celled organisms — similar structure to bacteria but distinctly different genetics</div>
+    <ul>
+      <li>Discovered by Carl Woese and colleagues in <strong>1977</strong></li>
+      <li>Separate category from both eukaryotes and prokaryotes</li>
+      <li>Share a single genetic ancestor — likely the <strong>ancient microbial precursor</strong> to both eukaryotes and prokaryotes</li>
+      <li>More closely resemble eukaryotes genetically despite bacteria-like structure</li>
+      <li><strong>Extremophile affinity</strong> — thrive in harsh environments:</li>
+    </ul>
+    <div class="three-col" style="margin-top:10px;">
+      <div style="background:#FEF9E7;border-radius:6px;padding:10px;font-size:0.84rem;text-align:center;"><strong>Salt Marshes</strong><br>High salinity environments</div>
+      <div style="background:#FEF9E7;border-radius:6px;padding:10px;font-size:0.84rem;text-align:center;"><strong>Steam / Hot Vents</strong><br>Extreme heat environments</div>
+      <div style="background:#FEF9E7;border-radius:6px;padding:10px;font-size:0.84rem;text-align:center;"><strong>Ice Glaciers</strong><br>Extreme cold environments</div>
+    </div>
+  </div>
+
+  <h3>Comparing the Three Groups</h3>
+  <div class="card blue">
+    <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+      <thead>
+        <tr style="background:#2471A3;color:white;">
+          <th style="padding:8px 10px;text-align:left;">Feature</th>
+          <th style="padding:8px 10px;text-align:left;">Eukaryotes</th>
+          <th style="padding:8px 10px;text-align:left;">Prokaryotes</th>
+          <th style="padding:8px 10px;text-align:left;">Archaea</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#EBF5FB;">
+          <td style="padding:7px 10px;">Nucleus</td>
+          <td style="padding:7px 10px;">&#10003; Membrane-bound</td>
+          <td style="padding:7px 10px;">&#10007; In protoplasm</td>
+          <td style="padding:7px 10px;">&#10007; In protoplasm</td>
+        </tr>
+        <tr style="background:white;">
+          <td style="padding:7px 10px;">Cell Type</td>
+          <td style="padding:7px 10px;">Complex</td>
+          <td style="padding:7px 10px;">Simple</td>
+          <td style="padding:7px 10px;">Simple but unique</td>
+        </tr>
+        <tr style="background:#EBF5FB;">
+          <td style="padding:7px 10px;">Examples</td>
+          <td style="padding:7px 10px;">Humans, animals, fungi</td>
+          <td style="padding:7px 10px;">All bacteria</td>
+          <td style="padding:7px 10px;">Extremophiles</td>
+        </tr>
+        <tr style="background:white;">
+          <td style="padding:7px 10px;">Discovered</td>
+          <td style="padding:7px 10px;">Ancient knowledge</td>
+          <td style="padding:7px 10px;">van Leeuwenhoek, 1673</td>
+          <td style="padding:7px 10px;">Woese et al., 1977</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════ TAB 5: VIRUS EMPIRE ═══════════ -->
+<div id="viral" class="tab-content">
+  <h2>The Virus Empire — Viruses, Viroids &amp; Prions</h2>
+  <p class="section-intro">Non-living agents that require living hosts to replicate. They make up the second empire in the Two Empires classification system and far outnumber all cellular organisms combined.</p>
+
+  <div class="card red">
+    <div class="card-title">&#129440; Viruses</div>
+    <ul>
+      <li>Extremely small bundles of <strong>DNA or RNA</strong> (retroviruses) — visible only with an electron microscope</li>
+      <li>Nucleic acids wrapped in a <strong>capsid</strong> — a protein coating made of <strong>capsomeres</strong></li>
+      <li><strong>Non-living, acellular</strong> — do not have the capacity to perform reproductive functions on their own</li>
+      <li>Classified as <strong>obligate intracellular parasites</strong> — must invade a host cell and use its reproductive machinery to replicate and spread viral DNA/RNA</li>
+      <li>Penetrate healthy cells, becoming parasites, spreading during cellular reproductive processes</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">&#129518; Viroids</div>
+    <ul>
+      <li>Thought to be <strong>precursors to modern viruses</strong></li>
+      <li>A fraction of the size of viruses</li>
+      <li><strong>Naked loops of RNA</strong> — no protein capsid</li>
+      <li>Once inside a cell, invade cellular RNA</li>
+      <li>One of the viral empire members included in the Two Empires classification</li>
+    </ul>
+  </div>
+
+  <h3>Prions — Non-Living Agents of Fatal CNS Disease</h3>
+  <div class="card gold">
+    <div class="card-title">What Are Prions?</div>
+    <ul>
+      <li>Non-living agents responsible for <strong>incurable, fatal diseases of the central nervous system</strong></li>
+      <li>Cause several forms of <strong>Transmissible Spongiform Encephalopathies (TSEs)</strong></li>
+      <li>Normal proteins (<strong>PrPc</strong>) in neural tissue fold abnormally, creating deformed <strong>PrPsc</strong> proteins</li>
+      <li>Deformed proteins influence other normal proteins to also deform — a self-propagating cascade</li>
+      <li>Progression destroys neural tissue, creating scattered holes — giving brain matter a <strong>sponge-like appearance</strong></li>
+      <li>No nucleic acids, no cellular structure — cannot be classified in the Three Domains system</li>
+    </ul>
+  </div>
+
+  <h3>Prion Diseases by Species</h3>
+  <div class="two-col">
+    <div class="card red">
+      <div class="card-title">Human Prion Diseases</div>
+      <ul>
+        <li><strong>Creutzfeldt-Jakob Disease (CJD)</strong> — most common human prion disease; rapidly fatal dementia</li>
+        <li><strong>Variant CJD (vCJD)</strong> — linked to consumption of BSE-infected cattle ("mad cow")</li>
+        <li><strong>Gerstmann-Straussler-Scheinker syndrome (GSS)</strong> — rare genetically transmitted; causes ataxia and dementia</li>
+        <li><strong>Fatal Familial Insomnia (FFI)</strong> — rare genetic disease; disrupts sleep-wakefulness patterns</li>
+        <li><strong>Kuru</strong> — TSE caused by consumption of prion-infected human brain tissue; linked to now-discontinued burial rituals in New Guinea</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Animal Prion Diseases (TSEs)</div>
+      <ul>
+        <li><strong>Bovine Spongiform Encephalopathy (BSE)</strong> — "mad cow disease" in cattle</li>
+        <li><strong>Ovine Spongiform Encephalopathy (Scrapie)</strong> — in sheep</li>
+        <li><strong>Chronic Wasting Disease (CWD)</strong> — in hooved animals (deer, elk, moose) in North America</li>
+      </ul>
+      <p style="margin-top:12px;font-size:0.83rem;color:#666;"><strong>OR Connection:</strong> Prions are highly resistant to standard sterilization. Special instrument processing protocols apply for suspected prion cases (e.g., craniotomy for CJD evaluation).</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Board Exam Note:</strong> Prions are <strong>not</strong> classified in the Three Domains system (Bacteria/Archaea/Eukarya) because they are non-living and have no cellular structure or nucleic acids. They belong to the <strong>Viral Empire</strong> in the Two Empires classification. This distinction is clinically significant because standard sterilization methods do NOT destroy prions.
+  </div>
+</div>
+
+<!-- ═══════════ TAB 6: TAXONOMY & NOMENCLATURE ═══════════ -->
+<div id="nomenclature" class="tab-content">
+  <h2>Taxonomy &amp; Nomenclature</h2>
+  <p class="section-intro">Taxonomy provides a universal language for identifying, naming, and classifying microorganisms — enabling accurate communication between scientists worldwide and supporting clinical diagnosis and treatment.</p>
+
+  <div class="two-col">
+    <div class="card teal">
+      <div class="card-title">Taxonomy</div>
+      <p>The system of naming every living organism. Objectives:</p>
+      <ul style="margin-top:8px;">
+        <li>Establishing relationships between like organisms</li>
+        <li>Differentiating between different groups of organisms</li>
+        <li>Classifying previously unknown organisms</li>
+        <li>Allows accurate medical diagnosis and prescribed treatment</li>
+        <li>Universal communication language among scientists worldwide</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Binomial Nomenclature (Linnaeus, mid-1700s)</div>
+      <ul>
+        <li>Created by <strong>Carolus Linnaeus</strong> in the mid-1700s</li>
+        <li>Names written in <strong>Latin</strong> (language of science in the 1700s)</li>
+        <li>Two-name system: <strong>Genus + species</strong></li>
+        <li>Genus name: <strong>Always capitalized</strong>, spelled out first time, then abbreviated (e.g., <em>S. aureus</em>)</li>
+        <li>Species name: <strong>Always lowercase</strong>, fully spelled out</li>
+        <li>Handwritten: <u>underlined</u> &nbsp;|&nbsp; Typewritten: <em>italicized</em></li>
+        <li>Example: <em>Staphylococcus aureus</em> then <em>S. aureus</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Taxonomic Hierarchy</h3>
+  <p class="section-intro" style="margin-bottom:10px;">Subdivisions from largest (most general) to smallest (most specific):</p>
+
+  <div class="card blue" style="padding:16px 20px;">
+    <div class="hier-row"><span class="hier-pill" style="background:#2C1654;color:white;">Kingdom</span><span class="hier-desc">Largest group — broadest classification (e.g., Bacteria, Animalia)</span></div>
+    <div class="hier-row"><span class="hier-pill" style="background:#4A235A;color:white;">Phylum</span><span class="hier-desc">Also called "Division" in plant/fungi taxonomy</span></div>
+    <div class="hier-row"><span class="hier-pill" style="background:#7D3C98;color:white;">Class</span><span class="hier-desc">Major subdivision of a phylum</span></div>
+    <div class="hier-row"><span class="hier-pill" style="background:#A569BD;color:white;">Order</span><span class="hier-desc">Group of related families</span></div>
+    <div class="hier-row"><span class="hier-pill" style="background:#1A6B5A;color:white;">Family</span><span class="hier-desc">Group of closely related genera</span></div>
+    <div class="hier-row"><span class="hier-pill" style="background:#148F77;color:white;">Genus</span><span class="hier-desc">Closely related species group — first name in binomial nomenclature (capitalized, italicized)</span></div>
+    <div class="hier-row"><span class="hier-pill" style="background:#1ABC9C;color:white;">Species</span><span class="hier-desc">Most specific — the most closely related group of organisms — second name in binomial nomenclature (lowercase, italicized)</span></div>
+    <p style="font-size:0.8rem;margin-top:10px;color:#666;">Mnemonic: <strong>K</strong>ind <strong>P</strong>eople <strong>C</strong>ome <strong>O</strong>ver <strong>F</strong>or <strong>G</strong>ood <strong>S</strong>oup</p>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Prokaryote Reference:</strong> The specific taxonomic classification for prokaryotes is <strong>Bergey's Manual of Systematic Bacteriology</strong> — the standardized reference for microbiology researchers. Continuously revised and updated electronically through the Bergey's Manual Trust.
+  </div>
+
+  <h3>Viral Taxonomy</h3>
+  <div class="card">
+    <div class="card-title">Viruses Are Classified By:</div>
+    <div class="two-col" style="margin-top:8px;">
+      <ul>
+        <li>Morphology (structure/appearance)</li>
+        <li>Nucleic acid type (DNA or RNA)</li>
+        <li>Mode of replication</li>
+      </ul>
+      <ul>
+        <li>Types of host organisms invaded</li>
+        <li>Types of diseases they cause</li>
+      </ul>
+    </div>
+    <p style="margin-top:10px;font-size:0.86rem;"><strong>General host-based classifications:</strong> <span class="badge-pill">Zoophaginae</span> animals &nbsp; <span class="badge-pill teal">Phytophaginae</span> plants &nbsp; <span class="badge-pill gold">Phaginae</span> prokaryotes</p>
+  </div>
+
+  <div class="two-col">
+    <div class="card gold">
+      <div class="card-title">ICTV — International Committee on Taxonomy of Viruses</div>
+      <ul>
+        <li>Governs viral taxonomy internationally</li>
+        <li>2021 ICTV 10th Report: <strong>nine groups</strong> of viruses based on genetic structures</li>
+        <li>Common viral names are <strong>not italicized</strong></li>
+        <li>Genus names: italicized, end in <em>-virus</em> (e.g., <em>Paramyxovirus</em>)</li>
+        <li>Sub-family: ends in <em>-virinae</em> (e.g., <em>Paramyxovirinae</em>)</li>
+        <li>Family: ends in <em>-viridae</em> (e.g., <em>Paramyxoviridae</em>)</li>
+        <li>Order: ends in <em>-virales</em> (e.g., <em>Picornavirales</em>)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Baltimore Classification System</div>
+      <ul>
+        <li>Devised by virologist and Nobel Laureate <strong>David Baltimore</strong></li>
+        <li><strong>7 groups</strong> based on genome and messenger RNA (mRNA)</li>
+        <li>Viruses carry single or double genetic strands of DNA or RNA</li>
+        <li>Considers <strong>positive (+) or negative (−) sense</strong> component</li>
+        <li>Involves viral mRNA's ability to interact with host cell cytoplasm (translation → proteins/enzymes for replication)</li>
+        <li>ICTV follows the Baltimore system, adding subviral agents and unclassified viruses</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ TAB 7: KEY TERMS ═══════════ -->
+<div id="terms" class="tab-content">
+  <h2>Key Terms — Chapter 2</h2>
+  <p class="section-intro">Click any card to reveal the definition.</p>
+  <div class="term-grid">
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Acellular</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">Not composed of cells. Viruses and prions are acellular — they lack cellular structure and cannot perform cellular functions on their own.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Archaea (Archaebacteria)</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">Single-celled organisms discovered by Carl Woese in 1977. Structurally similar to bacteria but genetically distinct. Often found in extreme environments (salt marshes, hot vents, glaciers). Likely the ancient precursor to both eukaryotes and prokaryotes.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Binomial Nomenclature</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">A two-name scientific naming system created by Carolus Linnaeus. Uses Genus (capitalized) + species (lowercase) written in italics. Example: Staphylococcus aureus, then abbreviated S. aureus.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Capsid</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">The protective protein coating surrounding a virus's nucleic acids. Made up of proteins called capsomeres. Protects the viral genetic material and helps the virus attach to host cells.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Capsomere</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">Individual protein subunits that assemble to form the capsid (protein coat) of a virus.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Cladistics</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">A method of classifying organisms based on genetic lineage and evolutionary relationships — mapping out the microbial family tree. Used in the Three Domains classification system (Woese, 1990). Contrasts with phenetics.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Creutzfeldt-Jakob Disease (CJD)</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">The most common human prion disease — a rapidly progressive, fatal neurodegenerative disease. Caused by abnormal folding of prion proteins (PrPsc) in neural tissue. Variant CJD (vCJD) is linked to consumption of BSE-infected beef. Surgical instruments used in suspected CJD cases require special processing.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Eukaryotes</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">Organisms whose cells have membrane-bound organelles and a true nucleus containing DNA. Includes humans, animals, plants, fungi, protozoa, and algae. One of the three domains in Woese's classification system.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Genome</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">The complete set of genetic information of an organism or virus — the entirety of its DNA or RNA. The Baltimore classification system classifies viruses based on their genome type.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Microbiome</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">The entire community of microorganisms (bacteria, fungi, viruses) that inhabit a particular environment — especially those living in or on the human body. No living organism can survive without some relationship with its microbiome.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Microbiology</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">The study of microorganisms — a diverse group of minute, simple life forms including bacteria, archaea, algae, fungi, protozoa, and viruses. Concerned with structure, function, classification, and ways to exploit and control microbial activity.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Morphology</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">The study of the structure and form of organisms. Morphology is one of the criteria used to classify viruses — along with nucleic acid type, mode of replication, host type, and disease caused.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Normal Flora</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">Microorganisms that normally inhabit the body without causing disease. Every organism has a normal flora (microbiome). When normal flora escapes its typical environment (e.g., through surgery or injury), it can cause serious pathological conditions.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Obligate Intracellular Parasite</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">An organism or agent (such as a virus) that can only reproduce inside a living host cell. Viruses are obligate intracellular parasites — they hijack the host cell's reproductive machinery to replicate their own genetic material.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Osmotrophic</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">Obtaining nutrients by absorbing dissolved organic compounds from the environment — characteristic of fungi. Fungi are classified as osmotrophic eukaryotes in Whittaker's Five Kingdoms system.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Pathological Conditions</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">Disease states caused by pathogens or abnormal processes. Even normal flora organisms can cause serious pathological conditions when they escape their typical environment — for example, gut bacteria entering the bloodstream during surgery.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Phenetics</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">Classification of organisms based on observable physical similarities and characteristics — appearance, structure, behavior. Used in earlier classification systems up through Whittaker's Five Kingdoms. Replaced/supplemented by cladistics and phylogeny in modern systems.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Phylogeny</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">The study of evolutionary relationships among organisms based on genetic data. Phylogenetic analysis creates a microbial "family tree" tracing common ancestors across billions of years. Used in Woese's Three Domains classification.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Prions</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">Non-living, misfolded proteins (PrPsc) that cause normal neural proteins (PrPc) to also misfold in a self-propagating cascade. Cause fatal transmissible spongiform encephalopathies (TSEs) including CJD in humans and BSE in cattle. Resistant to standard sterilization methods.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Prokaryotes</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">Organisms whose cells contain genetic material in the protoplasm but lack a membrane-bound nucleus. Includes all bacteria. Simpler in structure than eukaryotes. Most numerous organisms on Earth.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Protoplasm</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">The living contents of a cell — the cytoplasm and nucleus together. In prokaryotes, genetic material floats freely in the protoplasm rather than being enclosed in a membrane-bound nucleus.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Retroviruses</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">Viruses that carry their genetic information as RNA and use the enzyme reverse transcriptase to convert their RNA into DNA inside the host cell. HIV is the most well-known retrovirus. Classified as RNA viruses in the Baltimore classification system.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Taxonomic Hierarchy</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">The system of subdivisions for classifying all living organisms, from largest to smallest group: Kingdom → Phylum → Class → Order → Family → Genus → Species. Mnemonic: "Kind People Come Over For Good Soup."</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Taxonomy</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">The scientific system of naming, classifying, and organizing every living organism. Establishes universal standardized communication among scientists and supports accurate medical diagnosis and treatment.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Transmissible Spongiform Encephalopathy (TSE)</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">A group of fatal, progressive neurodegenerative diseases caused by prions. Characterized by abnormal protein folding that destroys neural tissue, creating sponge-like holes in the brain. Examples: CJD (humans), BSE/mad cow disease (cattle), scrapie (sheep), chronic wasting disease (deer/elk).</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Viroids</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">Thought to be precursors to modern viruses. Extremely small naked loops of RNA — smaller than viruses and lacking a protein capsid. Once inside a cell, they invade cellular RNA. Members of the Viral Empire in the Two Empires classification.</div>
+    </div>
+
+    <div class="term-card" onclick="this.classList.toggle('open')">
+      <div class="term-front">Viruses</div>
+      <div class="term-hint">Click to reveal</div>
+      <div class="term-back">Non-living, acellular microbes consisting of DNA or RNA enclosed in a protein capsid. Obligate intracellular parasites that must use a living host cell's reproductive machinery to replicate. Only visible with an electron microscope.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════ TAB 8: QUIZ ═══════════ -->
+<div id="quiz" class="tab-content">
+  <h2>Chapter 2 Practice Quiz</h2>
+  <p class="section-intro" style="margin-bottom:20px;">Select the best answer for each question, then submit for your score.</p>
+
+  <div class="quiz-q">
+    <p>1. Which scientist first proposed the Three Domains classification system based on cladistics and phylogeny?</p>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Robert Whittaker</button>
+    <button class="quiz-opt" data-correct="true"  onclick="pickOpt(this)">Carl Woese</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Ernst Haeckel</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Herbert Copeland</button>
+    <div class="quiz-feedback ok">&#10003; Correct! Carl Woese and colleagues first identified Archaea in 1977 and proposed the Three Domains system (Bacteria, Archaea, Eukarya) in 1990, based on genetic relationships rather than observable characteristics.</div>
+    <div class="quiz-feedback no">&#10007; Incorrect. Carl Woese proposed the Three Domains system in 1990 after discovering Archaea in 1977. His work used cladistics and phylogeny — genetic family trees — rather than phenetics.</div>
+  </div>
+
+  <div class="quiz-q">
+    <p>2. Viruses are classified as obligate intracellular parasites because they:</p>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Live inside the nuclei of all bacteria</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Produce their own energy through photosynthesis</button>
+    <button class="quiz-opt" data-correct="true"  onclick="pickOpt(this)">Must use a living host cell's reproductive machinery to replicate</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Can reproduce independently when given sufficient nutrients</button>
+    <div class="quiz-feedback ok">&#10003; Correct! Viruses are non-living and acellular — they cannot replicate on their own. They must invade a host cell and use its reproductive processes to copy their DNA or RNA, making them obligate intracellular parasites.</div>
+    <div class="quiz-feedback no">&#10007; Incorrect. Viruses are classified as obligate intracellular parasites because they are non-living and acellular — they must hijack a living host cell's reproductive machinery to replicate their genetic material.</div>
+  </div>
+
+  <div class="quiz-q">
+    <p>3. In binomial nomenclature, which of the following is written correctly?</p>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">staphylococcus Aureus</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">STAPHYLOCOCCUS AUREUS</button>
+    <button class="quiz-opt" data-correct="true"  onclick="pickOpt(this)">Staphylococcus aureus</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">staphylococcus aureus</button>
+    <div class="quiz-feedback ok">&#10003; Correct! In binomial nomenclature: the genus name (Staphylococcus) is always capitalized and the species name (aureus) is always lowercase. When typewritten, the full name is italicized.</div>
+    <div class="quiz-feedback no">&#10007; Incorrect. Binomial nomenclature rules: Genus name is capitalized (Staphylococcus), species name is lowercase (aureus). Typewritten names are italicized. So the correct form is Staphylococcus aureus.</div>
+  </div>
+
+  <div class="quiz-q">
+    <p>4. What is the correct order of the taxonomic hierarchy from largest (most general) to smallest (most specific)?</p>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Species → Genus → Family → Order → Class → Phylum → Kingdom</button>
+    <button class="quiz-opt" data-correct="true"  onclick="pickOpt(this)">Kingdom → Phylum → Class → Order → Family → Genus → Species</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Kingdom → Class → Phylum → Family → Order → Species → Genus</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Domain → Kingdom → Species → Family → Class → Genus → Order</button>
+    <div class="quiz-feedback ok">&#10003; Correct! The taxonomic hierarchy from largest to smallest: Kingdom → Phylum → Class → Order → Family → Genus → Species. Mnemonic: "Kind People Come Over For Good Soup."</div>
+    <div class="quiz-feedback no">&#10007; Incorrect. The correct order from largest to smallest is: Kingdom → Phylum → Class → Order → Family → Genus → Species. Mnemonic: "Kind People Come Over For Good Soup."</div>
+  </div>
+
+  <div class="quiz-q">
+    <p>5. Prions cause disease by which mechanism?</p>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Injecting viral RNA directly into neurons</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Producing toxins that dissolve the blood-brain barrier</button>
+    <button class="quiz-opt" data-correct="true"  onclick="pickOpt(this)">Causing normal proteins to misfold, creating a cascade of abnormal protein folding that destroys neural tissue</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Invading host cell nuclei and altering DNA replication</button>
+    <div class="quiz-feedback ok">&#10003; Correct! Prions are misfolded proteins (PrPsc) that cause normal neural proteins (PrPc) to also misfold in a self-propagating cascade. This destroys neural tissue and creates sponge-like holes in brain matter — hence the name "spongiform encephalopathy."</div>
+    <div class="quiz-feedback no">&#10007; Incorrect. Prions cause disease by triggering a chain reaction of protein misfolding: abnormal PrPsc proteins cause normal PrPc proteins to misfold, progressively destroying neural tissue and creating a sponge-like appearance in brain matter.</div>
+  </div>
+
+  <div class="quiz-q">
+    <p>6. The Two Empires classification system was proposed in 2010 primarily because:</p>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">The Three Domains system had too many organisms to manage</button>
+    <button class="quiz-opt" data-correct="true"  onclick="pickOpt(this)">The Three Domains system did not account for non-living viral agents such as viruses, prions, and viroids</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Archaea were found to be identical to bacteria at the genetic level</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Scientists needed to separate plants from animals in the classification system</button>
+    <div class="quiz-feedback ok">&#10003; Correct! Comparative genomics researchers proposed the Two Empires system because the Three Domains system (Bacteria, Archaea, Eukarya) did not represent non-living viral agents. The viral empire — which far exceeds cellular organisms in number — needed its own category.</div>
+    <div class="quiz-feedback no">&#10007; Incorrect. The Two Empires system was proposed because the Three Domains system excluded non-living viral agents (viruses, prions, viroids, plasmids, transposons). These are acellular and non-living, requiring a separate empire from cellular life.</div>
+  </div>
+
+  <div class="quiz-q">
+    <p>7. Which of the following correctly describes Archaea?</p>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Multi-celled eukaryotes that live in moderate temperature environments</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Acellular non-living agents responsible for TSEs</button>
+    <button class="quiz-opt" data-correct="true"  onclick="pickOpt(this)">Single-celled organisms structurally similar to bacteria but with distinctly different genetic structures, often found in extreme environments</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">The same as bacteria but with a membrane-bound nucleus</button>
+    <div class="quiz-feedback ok">&#10003; Correct! Archaea are single-celled organisms that look like bacteria structurally but have distinctly different genetic structures. They thrive in extreme environments (salt marshes, steam vents, ice glaciers) and are thought to be the ancient precursor to both eukaryotes and prokaryotes.</div>
+    <div class="quiz-feedback no">&#10007; Incorrect. Archaea are single-celled organisms structurally similar to bacteria but genetically distinct. They are often found in extreme environments and are likely the ancient common ancestor of both prokaryotes and eukaryotes.</div>
+  </div>
+
+  <div class="quiz-q">
+    <p>8. The Baltimore classification system categorizes viruses into seven groups based on:</p>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">The species of host organism they infect</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Their morphology and protein capsid structure</button>
+    <button class="quiz-opt" data-correct="true"  onclick="pickOpt(this)">The virus's genome type and messenger RNA (mRNA)</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Geographic region of origin and transmission route</button>
+    <div class="quiz-feedback ok">&#10003; Correct! David Baltimore — virologist and Nobel Laureate — devised a system classifying viruses into 7 groups based on their genome (DNA or RNA, single or double stranded) and messenger RNA. The ICTV follows this system.</div>
+    <div class="quiz-feedback no">&#10007; Incorrect. The Baltimore classification system groups viruses into 7 categories based on genome type (DNA vs. RNA, single vs. double stranded) and their messenger RNA (mRNA), including whether there is a positive or negative sense component.</div>
+  </div>
+
+  <div class="quiz-q">
+    <p>9. In the surgical environment, which aspect of normal flora is most clinically significant for the surgical technologist?</p>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Normal flora has no relevance to surgical practice</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Normal flora only becomes a concern after the patient leaves the OR</button>
+    <button class="quiz-opt" data-correct="true"  onclick="pickOpt(this)">When normal flora escapes its typical environment, it can cause serious pathological conditions — making pre-op skin cleansing and sterile technique essential</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Normal flora is completely eliminated by standard preoperative skin prep</button>
+    <div class="quiz-feedback ok">&#10003; Correct! Normal flora (resident and transient microflora) can cause serious infections when introduced into a surgical site. This is why pre-op skin cleansing with antimicrobial agents and strict sterile technique are essential — not to eliminate all microbes, but to reduce the microbial load to the lowest possible number.</div>
+    <div class="quiz-feedback no">&#10007; Incorrect. Normal flora becomes clinically significant when it escapes its typical environment. During invasive procedures, skin flora can contaminate the surgical site and cause serious infections. This is why antimicrobial skin prep and sterile technique are critical.</div>
+  </div>
+
+  <div class="quiz-q">
+    <p>10. Which of the following is the standardized reference for classifying and naming prokaryotes (bacteria)?</p>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">The Baltimore Classification System</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">ICTV 10th Report</button>
+    <button class="quiz-opt" data-correct="false" onclick="pickOpt(this)">Whittaker's Five Kingdom Manual</button>
+    <button class="quiz-opt" data-correct="true"  onclick="pickOpt(this)">Bergey's Manual of Systematic Bacteriology</button>
+    <div class="quiz-feedback ok">&#10003; Correct! Bergey's Manual of Systematic Bacteriology is the specific taxonomic classification reference for prokaryotes. It is continuously revised and updated electronically through the Bergey's Manual Trust and serves as the standardized reference for microbiology researchers worldwide.</div>
+    <div class="quiz-feedback no">&#10007; Incorrect. Bergey's Manual of Systematic Bacteriology is the standardized taxonomic classification reference for prokaryotes (bacteria). It is maintained by the Bergey's Manual Trust and continuously updated.</div>
+  </div>
+
+  <button id="submit-quiz" onclick="submitQuiz()">Submit Quiz</button>
+  <div id="quiz-score"></div>
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-bar button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+function pickOpt(btn) {
+  const q = btn.closest('.quiz-q');
+  if (q.dataset.answered) return;
+  q.dataset.answered = '1';
+  const correct = btn.dataset.correct === 'true';
+  btn.classList.add(correct ? 'correct' : 'wrong');
+  if (!correct) q.querySelectorAll('.quiz-opt[data-correct="true"]').forEach(b => b.classList.add('correct'));
+  const fbs = q.querySelectorAll('.quiz-feedback');
+  fbs[correct ? 0 : 1].classList.add('show');
+  q.querySelectorAll('.quiz-opt').forEach(b => b.style.pointerEvents = 'none');
+}
+function submitQuiz() {
+  const questions = document.querySelectorAll('.quiz-q');
+  let score = 0;
+  questions.forEach(q => {
+    if (q.dataset.answered) {
+      const chosen = q.querySelector('.quiz-opt.correct');
+      if (chosen && chosen.dataset.correct === 'true') score++;
+    }
+  });
+  const scoreDiv = document.getElementById('quiz-score');
+  scoreDiv.style.display = 'block';
+  const pct = Math.round((score/10)*100);
+  const msg = pct >= 90 ? '&#127942; Excellent! Board-exam ready on this material.' :
+              pct >= 70 ? '&#128077; Good work. Review the questions you missed.' :
+              '&#128218; Review Chapter 2 and try again — focus on Classification History and Key Terms.';
+  scoreDiv.innerHTML = 'Score: ' + score + ' / 10 &nbsp;(' + pct + '%)&nbsp; &mdash; &nbsp;' + msg;
+}
+</script>
+</body>
+</html>
